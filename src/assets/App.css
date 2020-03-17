@@ -1,0 +1,116 @@
+html {
+  background: white;
+}
+
+.appContainer {
+  max-width: 650px;
+  margin: auto;
+  margin-top: 8vh;
+}
+
+.left-half {
+  width: 60%;
+}
+
+.right-half {
+  width: 40%;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.25rem;
+  color: rgba(0,0,0,0.6);
+}
+
+.explainerContainer {
+  max-width: 85vw;
+  margin: auto;
+  margin-top: 5vh;
+}
+
+.loadingFont {
+  text-align: center;
+  font-style: italic;
+  margin: auto;
+  display: block;
+  margin-top: 5vh;
+  font-size: 20px;
+}
+
+.loadingContainer,
+.dropzone,
+.resultArea,
+.analyzingTextDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.dropzone{
+  border: 3px dotted hsl(226, 3%, 50%);
+  flex-direction: column;
+  width: 50%;
+  min-height: 40vh;
+  margin-top: 8vh;
+  background: #e3e3e3;
+  -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
+              0 2px 2px rgba(0,0,0,0.12), 
+              0 4px 4px rgba(0,0,0,0.12), 
+              0 8px 8px rgba(0,0,0,0.12),
+              0 16px 16px rgba(0,0,0,0.12);
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
+              0 2px 2px rgba(0,0,0,0.12), 
+              0 4px 4px rgba(0,0,0,0.12), 
+              0 8px 8px rgba(0,0,0,0.12),
+              0 16px 16px rgba(0,0,0,0.12);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
+              0 2px 2px rgba(0,0,0,0.12), 
+              0 4px 4px rgba(0,0,0,0.12), 
+              0 8px 8px rgba(0,0,0,0.12),
+              0 16px 16px rgba(0,0,0,0.12);
+}
+
+button {
+  background: #11998e;  /* fallback for old browsers */
+  color: white;
+  border-radius: 50px;
+  padding: 10px 12px;
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dropzoneInstructions {
+  font-size: 14px;
+  color: hsl(226, 3%, 50%);
+  text-align: center;
+}
+
+.analyzingTextDiv{
+  flex-direction: column;
+}
+
+.resultArea {
+  margin-top: 5vh;
+  flex-direction: column;
+  text-align: center;
+}
+
+.imageResult {
+  -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
+              0 2px 2px rgba(0,0,0,0.12), 
+              0 4px 4px rgba(0,0,0,0.12), 
+              0 8px 8px rgba(0,0,0,0.12),
+              0 16px 16px rgba(0,0,0,0.12);
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
+              0 2px 2px rgba(0,0,0,0.12), 
+              0 4px 4px rgba(0,0,0,0.12), 
+              0 8px 8px rgba(0,0,0,0.12),
+              0 16px 16px rgba(0,0,0,0.12);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
+              0 2px 2px rgba(0,0,0,0.12), 
+              0 4px 4px rgba(0,0,0,0.12), 
+              0 8px 8px rgba(0,0,0,0.12),
+              0 16px 16px rgba(0,0,0,0.12);
+}
