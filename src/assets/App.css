@@ -31,6 +31,7 @@ html {
 .page-2 {
   background: #333;
   min-height: 120vh;
+  padding-bottom: 250px;
 }
 
 .page-2-container {
@@ -70,7 +71,7 @@ a {
 h1 {
   color: white;
   font-weight: 300;
-  font-size: 7vh;
+  font-size: 7.5vh;
 }
 
 h2 {

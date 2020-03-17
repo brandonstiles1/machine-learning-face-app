@@ -80,6 +80,16 @@ export default function MenuAppBar() {
                   onClose={handleClose}
                 >
                   <MenuItem onClick={handleClose}>
+                    <Link to='/'>
+                      Try the app
+                    </Link>
+                  </MenuItem>
+                  <MenuItem onClick={handleClose}>
+                    <Link to='/about'>
+                      About this app
+                    </Link>
+                  </MenuItem>
+                  <MenuItem onClick={handleClose}>
                     <a href='https://brandonstiles.dev'>
                       See my portfolio
                     </a>
@@ -88,16 +98,6 @@ export default function MenuAppBar() {
                     <a href='https://fourloop.ai'>
                       Get your own app built
                     </a>
-                  </MenuItem>
-                  <MenuItem onClick={handleClose}>
-                    <Link to='/about'>
-                      About this app
-                    </Link>
-                  </MenuItem>
-                  <MenuItem onClick={handleClose}>
-                    <Link to='/'>
-                      Try the app
-                    </Link>
                   </MenuItem>
                 </Menu>
               </div>
