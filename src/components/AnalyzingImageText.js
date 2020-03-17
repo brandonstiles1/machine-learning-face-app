@@ -6,7 +6,7 @@ const AnalyzingImageText = () => {
   return (
     <div className='analyzingTextDiv'>
       <Timer />
-      <p> Analyzing Image... </p>
+      <p style={{fontSize: '18px', color: '#495fcc'}}> Analyzing Image... </p>
     </div>
   );
 }

@@ -68,54 +68,57 @@ class App extends Component {
 
   render() {
     return (
-      <div className='appContainer'>
-        {this.state.loading ?
-          <LoadingContainer />
-          :
-          (
-            <>
-              <div className='left-half'>
-                <Explainer />
-              </div>
+      <>
+        <div className='app-background'></div>
+        <div className='appContainer'>
+          {this.state.loading ?
+            <LoadingContainer />
+            :
+            (
+              <>
+                <div className='left-half'>
+                  <Explainer />
+                </div>
 
-              <div className='right-half'>
-                <Fade down>
-                  <div className="dropzoneContainer">
-                    {this.state.file ?
-                      (<ResultArea isBrandon={this.state.isBrandon} isMichael={this.state.isMichael} file={this.state.file} />)
-                      :
-                      (this.state.analyzingImage ?
-                        <AnalyzingImageText />
+                <div className='right-half'>
+                  <Fade down>
+                    <div className="dropzoneContainer">
+                      {this.state.file ?
+                        (<ResultArea isBrandon={this.state.isBrandon} isMichael={this.state.isMichael} file={this.state.file} />)
                         :
-                        <Dropzone
-                          accept='image/jpeg, image/png'
-                          className='dropzone'
-                          onDrop={accepted => {
-                            const file = accepted[0];
-                            const reader = new FileReader();
+                        (this.state.analyzingImage ?
+                          <AnalyzingImageText />
+                          :
+                          <Dropzone
+                            accept='image/jpeg, image/png'
+                            className='dropzone'
+                            onDrop={accepted => {
+                              const file = accepted[0];
+                              const reader = new FileReader();
 
-                            this.setState({ analyzingImage: true });
+                              this.setState({ analyzingImage: true });
 
-                            reader.onload = () => {
-                              const fileAsDataURL = reader.result;
-                              this.checkFace(fileAsDataURL);
-                            };
+                              reader.onload = () => {
+                                const fileAsDataURL = reader.result;
+                                this.checkFace(fileAsDataURL);
+                              };
 
-                            reader.readAsDataURL(file);
-                          }}
-                        >
-                          <Upload />
-                          <button> CHOOSE IMAGE </button>
-                        </Dropzone>
-                      )
-                    }
-                  </div>
-                </Fade>
-              </div>
-            </>
-          )
-        }
-      </div>
+                              reader.readAsDataURL(file);
+                            }}
+                          >
+                            <Upload />
+                            <button> CHOOSE IMAGE </button>
+                          </Dropzone>
+                        )
+                      }
+                    </div>
+                  </Fade>
+                </div>
+              </>
+            )
+          }
+        </div>
+      </>
     );
   }
 };
