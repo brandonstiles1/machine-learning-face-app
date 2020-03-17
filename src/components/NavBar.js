@@ -1,13 +1,10 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 
@@ -53,48 +50,53 @@ export default function MenuAppBar() {
   return (
     <div className={classes.root}>
       <AppBar position="static" className={classes.appBar}>
-        <Toolbar className={classes.toolbar}>
-          <Typography variant="h6" className={classes.title}>
-            Machine Learning App
-          </Typography>
-          {auth && (
-            <div>
-              <IconButton
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleMenu}
-                color="white"
-              >
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={open}
-                onClose={handleClose}
-              >
-                <MenuItem onClick={handleClose}>
-                  <a href='https://brandonstiles.dev'>
-                    See my portfolio
-                  </a>
-                </MenuItem>
-                <MenuItem onClick={handleClose}>
-                  <a href='https://fourloop.ai'>
-                    Get your own app built
-                  </a>
-                </MenuItem>
-              </Menu>
-            </div>
-          )}
+          <Toolbar className={classes.toolbar}>
+            <Typography variant="h6" className={classes.title}>
+              Machine Learning App
+            </Typography>
+            {auth && (
+              <div>
+                <IconButton
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  onClick={handleMenu}
+                  color="white"
+                >
+                </IconButton>
+                <Menu
+                  id="menu-appbar"
+                  anchorEl={anchorEl}
+                  anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                  }}
+                  open={open}
+                  onClose={handleClose}
+                >
+                  <MenuItem onClick={handleClose}>
+                    <a href='https://brandonstiles.dev'>
+                      See my portfolio
+                    </a>
+                  </MenuItem>
+                  <MenuItem onClick={handleClose}>
+                    <a href='https://fourloop.ai'>
+                      Get your own app built
+                    </a>
+                  </MenuItem>
+                  <MenuItem onClick={handleClose}>
+                    <Link to='/page-2'>
+                      About this app
+                    </Link>
+                  </MenuItem>
+                </Menu>
+              </div>
+            )}
         </Toolbar>
       </AppBar>
     </div>
