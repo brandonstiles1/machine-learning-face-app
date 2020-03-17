@@ -5,12 +5,12 @@ import TimerWhite from './TimerWhite';
 
 const LoadingContainer = () => {
   return (
-    <Fade down>
-      <div className='loadingContainer'>
+    <div className='loadingContainer'>
+      <Fade down>
         <p className='loadingFont'>Loading facial recognition models...</p>
-        <TimerWhite />
-      </div>
-    </Fade>
+      </Fade>
+      <TimerWhite />
+    </div>
   );
 }
 

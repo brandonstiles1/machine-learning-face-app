@@ -30,7 +30,7 @@ html {
 
 .page-2 {
   background: #333;
-  min-height: 100vh;
+  min-height: 120vh;
 }
 
 .page-2-container {
@@ -227,7 +227,7 @@ button {
 }
 
 
-@media only screen and (max-width: 667px) {
+@media only screen and (max-width: 800px) {
   .appContainer {
     flex-direction: column;
     margin-top: 1vh;
@@ -275,5 +275,14 @@ button {
 
   .explainerContainer {
     padding-right: 0;
+  }
+
+  .dropzoneContainer {
+    height: 70vh;
+    padding: 20px;
+  }
+
+  .dropzone {
+    padding: 10px;
   }
 }

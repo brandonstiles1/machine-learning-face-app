@@ -90,8 +90,13 @@ export default function MenuAppBar() {
                     </a>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
-                    <Link to='/page-2'>
+                    <Link to='/about'>
                       About this app
+                    </Link>
+                  </MenuItem>
+                  <MenuItem onClick={handleClose}>
+                    <Link to='/'>
+                      Try the app
                     </Link>
                   </MenuItem>
                 </Menu>
