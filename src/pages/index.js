@@ -68,7 +68,9 @@ class App extends Component {
   render() {
     return (
       <div className='appContainer'>
-        <Explainer />
+        <div className='left-half'>
+          <Explainer />
+        </div>
         {this.state.file &&
           <ResultArea
             isBrandon={this.state.isBrandon}
@@ -79,30 +81,34 @@ class App extends Component {
         {this.state.loading ?
           <LoadingContainer />
           :
-          <>
-            <Dropzone
-              accept='image/jpeg, image/png'
-              className='dropzone'
-              onDrop={accepted => {
-                const file = accepted[0];
-                const reader = new FileReader();
+          <div className='right-half'>
+            <div className="dropzoneContainer">
 
-                this.setState({ analyzingImage: true });
+              <Dropzone
+                accept='image/jpeg, image/png'
+                className='dropzone'
+                onDrop={accepted => {
+                  const file = accepted[0];
+                  const reader = new FileReader();
 
-                reader.onload = () => {
-                  const fileAsDataURL = reader.result;
-                  this.checkFace(fileAsDataURL);
-                };
+                  this.setState({ analyzingImage: true });
 
-                reader.readAsDataURL(file);
-              }}
-            >
-              <Upload />
-              <button> Choose Image </button>
-            </Dropzone>
+                  reader.onload = () => {
+                    const fileAsDataURL = reader.result;
+                    this.checkFace(fileAsDataURL);
+                  };
 
-            {this.state.analyzingImage ? <AnalyzingImageText /> : ''}
-          </>
+                  reader.readAsDataURL(file);
+                }}
+              >
+                <Upload />
+                <button> Choose Image </button>
+              </Dropzone>
+
+              {this.state.analyzingImage ? <AnalyzingImageText /> : ''}
+              
+            </div>
+          </div>
         }
       </div>
     );
