@@ -1,5 +1,5 @@
 html {
-  background: #495fcc;
+  background: #6481e6;
 }
 
 .appContainer {
@@ -13,6 +13,8 @@ html {
 
 h1 {
   color: white;
+  font-weight: 500;
+  font-size: 7vh;
 }
 
 .left-half {
@@ -27,23 +29,16 @@ p {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.25rem;
-  color: white;
+  color: rgba(255,255,255,0.85);
 }
 
 .explainerContainer {
   max-width: 85vw;
   margin: auto;
   margin-top: 5vh;
+  padding-right: 145px;
 }
 
-.loadingFont {
-  text-align: center;
-  font-style: italic;
-  margin: auto;
-  display: block;
-  margin-top: 5vh;
-  font-size: 20px;
-}
 
 .loadingContainer,
 .dropzone,
@@ -55,10 +50,23 @@ p {
   margin: auto;
 }
 
+.loadingFont {
+  text-align: center;
+  font-style: italic;
+  margin: auto;
+  display: block;
+  font-size: 48px;
+}
+
 .dropzoneContainer {
   background: #e3e3e3;
   border-radius: 5px;
   padding: 35px;
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
   -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
               0 2px 2px rgba(0,0,0,0.12), 
               0 4px 4px rgba(0,0,0,0.12), 
@@ -80,49 +88,70 @@ p {
   border: 3px dotted hsl(226, 3%, 90%);
   flex-direction: column;
   min-height: 40vh;
+  width: 100%;
   background: white;
   border-radius: 5px;
 }
 
-button {
-  background: #495fcc;  /* fallback for old browsers */
+button {  
+  background: #f12711;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #f5af19, #f12711);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #f5af19, #f12711); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: white;
   border-radius: 50px;
-  padding: 10px 12px;
+  padding: 10px 15px;
   border: none;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.05), 
+              0 2px 2px rgba(0,0,0,0.05), 
+              0 4px 4px rgba(0,0,0,0.05), 
+              0 8px 8px rgba(0,0,0,0.05),
+              0 16px 16px rgba(0,0,0,0.05);
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05), 
+              0 2px 2px rgba(0,0,0,0.05), 
+              0 4px 4px rgba(0,0,0,0.05), 
+              0 8px 8px rgba(0,0,0,0.05),
+              0 16px 16px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.05), 
+              0 2px 2px rgba(0,0,0,0.05), 
+              0 4px 4px rgba(0,0,0,0.05), 
+              0 8px 8px rgba(0,0,0,0.05),
+              0 16px 16px rgba(0,0,0,0.05);
 }
 
 .dropzoneInstructions {
   font-size: 14px;
-  color: hsl(226, 3%, 50%);
+  color: #495fcc;
   text-align: center;
+}
+
+.resultArea {
+  flex-direction: column;
+}
+
+.imageResult {
+  width: 300px;
+  object-fit: cover;
+  -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.05), 
+              0 2px 2px rgba(0,0,0,0.05), 
+              0 4px 4px rgba(0,0,0,0.05), 
+              0 8px 8px rgba(0,0,0,0.05),
+              0 16px 16px rgba(0,0,0,0.05);
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05), 
+              0 2px 2px rgba(0,0,0,0.05), 
+              0 4px 4px rgba(0,0,0,0.05), 
+              0 8px 8px rgba(0,0,0,0.05),
+              0 16px 16px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.05), 
+              0 2px 2px rgba(0,0,0,0.05), 
+              0 4px 4px rgba(0,0,0,0.05), 
+              0 8px 8px rgba(0,0,0,0.05),
+              0 16px 16px rgba(0,0,0,0.05);
 }
 
 .analyzingTextDiv{
   flex-direction: column;
 }
 
-.resultArea {
-  margin-top: 5vh;
-  flex-direction: column;
-  text-align: center;
-}
-
-.imageResult {
-  -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
-              0 2px 2px rgba(0,0,0,0.12), 
-              0 4px 4px rgba(0,0,0,0.12), 
-              0 8px 8px rgba(0,0,0,0.12),
-              0 16px 16px rgba(0,0,0,0.12);
-  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
-              0 2px 2px rgba(0,0,0,0.12), 
-              0 4px 4px rgba(0,0,0,0.12), 
-              0 8px 8px rgba(0,0,0,0.12),
-              0 16px 16px rgba(0,0,0,0.12);
-  box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
-              0 2px 2px rgba(0,0,0,0.12), 
-              0 4px 4px rgba(0,0,0,0.12), 
-              0 8px 8px rgba(0,0,0,0.12),
-              0 16px 16px rgba(0,0,0,0.12);
-}

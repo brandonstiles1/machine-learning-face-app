@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as faceapi from 'face-api.js';
 import Dropzone from 'react-dropzone';
+import { Fade } from 'react-reveal';
 
 import Explainer from '../components/Explainer';
 import Upload from '../components/Upload';
@@ -68,52 +69,55 @@ class App extends Component {
   render() {
     return (
       <div className='appContainer'>
-        <div className='left-half'>
-          <Explainer />
-        </div>
-        {this.state.file &&
-          <ResultArea
-            isBrandon={this.state.isBrandon}
-            isMichael={this.state.isMichael}
-            file={this.state.file}
-          />
-        }
         {this.state.loading ?
           <LoadingContainer />
           :
-          <div className='right-half'>
-            <div className="dropzoneContainer">
+          (
+            <>
+              <div className='left-half'>
+                <Explainer />
+              </div>
 
-              <Dropzone
-                accept='image/jpeg, image/png'
-                className='dropzone'
-                onDrop={accepted => {
-                  const file = accepted[0];
-                  const reader = new FileReader();
+              <div className='right-half'>
+                <Fade down>
+                  <div className="dropzoneContainer">
+                    {this.state.file ?
+                      (<ResultArea isBrandon={this.state.isBrandon} isMichael={this.state.isMichael} file={this.state.file} />)
+                      :
+                      (this.state.analyzingImage ?
+                        <AnalyzingImageText />
+                        :
+                        <Dropzone
+                          accept='image/jpeg, image/png'
+                          className='dropzone'
+                          onDrop={accepted => {
+                            const file = accepted[0];
+                            const reader = new FileReader();
 
-                  this.setState({ analyzingImage: true });
+                            this.setState({ analyzingImage: true });
 
-                  reader.onload = () => {
-                    const fileAsDataURL = reader.result;
-                    this.checkFace(fileAsDataURL);
-                  };
+                            reader.onload = () => {
+                              const fileAsDataURL = reader.result;
+                              this.checkFace(fileAsDataURL);
+                            };
 
-                  reader.readAsDataURL(file);
-                }}
-              >
-                <Upload />
-                <button> Choose Image </button>
-              </Dropzone>
-
-              {this.state.analyzingImage ? <AnalyzingImageText /> : ''}
-              
-            </div>
-          </div>
+                            reader.readAsDataURL(file);
+                          }}
+                        >
+                          <Upload />
+                          <button> CHOOSE IMAGE </button>
+                        </Dropzone>
+                      )
+                    }
+                  </div>
+                </Fade>
+              </div>
+            </>
+          )
         }
       </div>
     );
   }
-
-}
+};
 
 export default App;
