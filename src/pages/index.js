@@ -8,6 +8,7 @@ import Upload from '../components/Upload';
 import ResultArea from '../components/ResultArea';
 import LoadingContainer from '../components/LoadingContainer';
 import AnalyzingImageText from '../components/AnalyzingImageText';
+import NavBar from '../components/NavBar';
 
 import '../assets/App.css';
 
@@ -59,16 +60,21 @@ class App extends Component {
 
     this.setState({
       loading: false,
-      isBrandon: brandonDistance < 0.6,
-      isMichael: michaelDistance < 0.6,
+      isBrandon: brandonDistance < 0.5,
+      isMichael: michaelDistance < 0.5,
       file: file,
       analyzingImage: false,
     });
+
+    console.log(uploadedDescriptor);
+    console.log(brandonDescriptor);
+    console.log(michaelDescriptor);
   }
 
   render() {
     return (
       <>
+        <NavBar />
         <div className='app-background'></div>
         <div className='appContainer'>
           {this.state.loading ?

@@ -6,15 +6,16 @@ const ResultArea = props => {
     <Fade up cascade>
       <div className='resultArea'>
         <h2>
-          {props.isBrandon ? 'This is Brandon!' : ''}
-          {props.isMichael ? 'This is Michael' : ''}
-          {!props.isBrandon && !props.isMichael ? "Well this is awkward... it's not Michael or Brandon." : ""}
+          {props.isBrandon ? 'This is Brandon ' : ''}
+          {props.isMichael ? 'This is Michael ' : ''}
+          {!props.isBrandon && !props.isMichael ? "Hmm... this is awkward. It's not Michael or Brandon." : ""}
         </h2>
         <img
           src={props.file}
           alt='Uploaded Picture'
           className='imageResult'
         />
+        <button onClick={() => window.location.reload()}>TEST AGAIN</button>
       </div>
     </Fade>
   );

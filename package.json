@@ -1,10 +1,12 @@
 {
   "name": "gatsby-starter-default",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "An online app that uses machine learning to distinguish between two young fellas",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Brandon Stiles <brandon@brandonstiles.com>",
   "dependencies": {
+    "@material-ui/core": "^4.9.5",
+    "@material-ui/icons": "^4.9.1",
     "face-api.js": "^0.16.2",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
